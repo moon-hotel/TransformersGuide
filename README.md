@@ -21,10 +21,10 @@
 # 简单上手
 
 - [*Transformers*介绍](000_Transformers.md)
-  - [特性](000_Transformers.md/#id001)
-  - [目录](000_Transformers.md/#id002)
+  - [特性](000_Transformers.md/#特性)
+  - [目录](000_Transformers.md/#目录)
 - [快速指引](./001_QuickTutorial.md)
-  - [通过管道来开始我们的第一个任务](./001_QuickTutorial.md/#id011)
+  - [通过管道来开始我们的第一个任务](./001_QuickTutorial.md/#1-通过管道来开始我们的第一个任务)
   - [预训练模型的内幕](./001_QuickTutorial.md/#id012)
 - [安装](002_Installation.md)
   - [通过`pip install`进行安装](002_Installation.md/#id021)
