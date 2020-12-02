@@ -6,7 +6,7 @@
 
 完成上述过程后，你就可以开始通过`pip install`来安装*Transformers*了。当然，如果你不喜欢这种安装方式，也可以通过源码来进行安装。
 
-## <span id = '021'>1 通过`pip install`进行安装</span>
+## 1 通过`pip install`进行安装
 
 首先，你需要自行的安装TensorFlow2.0或者PyTorch。你可以分别点击[TensorFlow 安装](https://www.tensorflow.org/install/pip#tensorflow-2.0-rc-is-available) 和[PyTorch安装](https://pytorch.org/get-started/locally/#start-locally)来阅读相关平台下的安装命令完成安装。当你你完成TensorFlow2.0或者是PyTorch的安装后，通过如下命令就能够完成对于*Transformers*的安装：
 
@@ -40,7 +40,7 @@ python -c "from transformers import pipeline; print(pipeline('sentiment-analysis
 
 （注意，如果是TensorFlow的话，可能还会输出其它额外的信息。）
 
-## <span id = '022'>2 通过源码进行安装</span>
+## 2 通过源码进行安装
 
 如果是通过源码进行安装的话，首先需要克隆我们对应的代码仓库，然后完成安装：
 
@@ -56,7 +56,7 @@ pip install -e .
 python -c "from transformers import pipeline; print(pipeline('sentiment-analysis')('I hate you'))"
 ```
 
-## <span id = '023'>3 模型缓存路径</span>
+## 3 模型缓存路径
 
 *Transformers*提供了大量的预训练模型，当你在第一次使用某些模型时，其对应的预训练模型就会被缓存到本地。此时，除非你在`from_pretrained()`方法中通过参数`cache_dir=...`来指定相应的缓存路径，否则默认情况下都会被下载到 `TRANSFORMERS_CACHE`环境变量所对应的路径中。`TRANSFORMERS_CACHE`的默认值是PyTorch的缓存路径加上`/transformers`。如果你并没有安装PyTorch，那么`TRANSFORMERS_CACHE`的默认值将以如下优先级选择：
 
@@ -70,7 +70,7 @@ python -c "from transformers import pipeline; print(pipeline('sentiment-analysis
 
 如果你希望通过我们的托管平台来使用一个非常大的预训练模型（例如通过CI来进行超大规模的产品部署），最好的方法就是将它缓存到你自己的终端上。同时，如果在这过程中遇到了任何问题，请直接联系我们。
 
-## <span id = '24'>4 在移动终端上使用*Transformers*</span>
+## 4 在移动终端上使用*Transformers*
 
 如果需要在移动设备上使用*Transformers*，那么你可以去[swift-coreml-transformers](https://github.com/huggingface/swift-coreml-transformers) 查看相关内容。
 

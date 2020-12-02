@@ -1,6 +1,6 @@
 # 术语表
 
-## <span id ='041'>1 术语总览</span>
+## 1 术语总览
 
 - autoencoding models： 参见 MLM
 - autoregressive models:：参见 CLM
@@ -15,7 +15,7 @@
 - Seq2Seq：序列到序列（Sequence-to-Sequence）模型。
 - token：一句话的一部分，通常情况下是一个词（word），但也可以是一个字符或一个字。
 
-## <span id ='042'>2 模型输入</span>
+## 2 模型输入
 
 尽管每种模型都不同，但彼此之间具有相似之处。因此，很多模型都可以使用同样形式的输入，具体细节见后续示例。
 

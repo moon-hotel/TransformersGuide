@@ -20,7 +20,7 @@
 
 所有在这里展示的案例其使用的预训练模型都是在某个特定数据中微调后的结果。如果选择载入的是一个没有经过微调后的模型，那么得到的模型仅仅只会包含最基本的transformer层所需要的参数，因此你需要根据你自己的任务场景来额外的定义一些网络层然后随机初始化这部分参数。（译者注：不管你载入的是不是一个经过微调后的模型，只要它最后的输出形式跟你的不一样，你就需要自己在额外的定义一些网络层，然后随机初始化这些参数，最后通过你自己的数据集进行微调。例如你载入的模型原本是进行5分类的，而你自己的任务却是10分类的，此时你就需要重新定义一个网络层。）
 
-## <span id ='1001'>1 序列分类任务</span>
+## 1 序列分类任务
 
 序列分类（Sequence Classification）任务指的就是将输入的序列分类到给定的类别数，其中最常见的便是GLUE中的数据集（译者注：GLUE的全称是General Language Understanding Evaluation，它是一些列分类分类数据集的集合，如SST、CoLA等）。如果你希望在GLUE数据集上微调一个分类任务模型，那么你可以通过使用脚本 [run_glue.py](https://github.com/huggingface/transformers/tree/master/examples/text-classification/run_glue.py) 和 [run_pl_glue.py](https://github.com/huggingface/transformers/tree/master/examples/text-classification/run_pl_glue.py) 或 [run_tf_glue.py](https://github.com/huggingface/transformers/tree/master/examples/text-classification/run_tf_glue.py) 来完成。
 
@@ -151,7 +151,7 @@ print(paraphrase_results)
 #[[0.9991129040718079, 0.0008870692690834403], [0.00013436285371426493, 0.9998656511306763]]
 ```
 
-## <span id ='1002'>2 问题答案抽取</span>
+## 2 问题答案抽取
 
 问题答案抽取（Extractive Question Answering）的目的是从文本中抽出与给定问题相关的答案。其中一个常见的问题回答数据集就是SQuAD数据集。因此如果你想要在数据集SQuAD上做微调的话，可以通过 [run_squad.py](https://github.com/huggingface/transformers/tree/master/examples/question-answering/run_squad.py) 和[run_tf_squad.py](https://github.com/huggingface/transformers/tree/master/examples/question-answering/run_tf_squad.py)这两个脚本来实现。
 
@@ -234,7 +234,7 @@ for question in questions:
 
 同时，语言模型在完成预训练后也非常有用，例如将预训练后的模型迁移到其它特定场景中的任务中，而这也只需要先将模型在一个非常大的语料进行预训练，然后让这个训练好的模型在一个特定场景中的数据集（如：[LysandreJik/arxiv-nlp](https://huggingface.co/lysandre/arxiv-nlp)）上进行微调即可。
 
-## <span id ='1003'>3 掩体语言模型</span>
+## 3 掩体语言模型
 
 掩体语言模型（Masked Language Modeling）指的是用一些特定的掩体token将序列中的部分token进行掩盖，然后让模型去预测被遮蔽部分内容的一个任务。这就使得要允许模型能够从掩盖部分的左边和掩盖部分的右边来考虑被掩盖的部分（即考虑上下文）。所以，这也就使得模型具备了一种坚实的基础，能够胜任那些需要理解上下文环境的下游任务（如SQuAD）。
 
@@ -346,7 +346,7 @@ Distilled models are smaller than the models they mimic. Using them instead of t
 Distilled models are smaller than the models they mimic. Using them instead of the large versions would help improve our carbon footprint.
 ```
 
-## <span id ='1004'>4 因果语言模型</span>
+## 4 因果语言模型
 
 所谓因果语言模型（Causal Language Modeling）指的跟根据输入的部分文本序列来预测接下来的文本内容的一个任务。因此，在这种场景下，模型仅仅只会关注于被挡住部分左边的内容（右边全都被遮蔽），然后生成后续的内容。并且通常情况下，最后预测得到的结果都是通过取模型最后一个隐藏状态的向量作为logits，然后通过分类器分类得到。
 
@@ -401,7 +401,7 @@ Hugging Face is based in DUMBO, New York City, and has
 
 在这个示例中，最后得到的预测输出就是'has'（译者在实际运行时输出的是is）。不过到目前为止这看起来几乎没什么用，因为仅仅只是生成了一个单词。在接下来的内容中，我们将会介绍如何通过`generate()`来生成指定长度的预测序列。
 
-## <span id ='1005'>5 文本生成模型</span>
+## 5 文本生成模型
 
 所谓文本生成模型（Text Generation）就是指将一段文本输入到模型中，让后模型根据文本所处的语境生成后续的内容。在接下来的这个示例中，我们将使用GPT-2模型以`pipelines`的方式来生成文本。同时，对于所有的模型来说，在使用`pipelines`生成文本时默认都只会生成前K个单词（译者注：也就是下面的`max_length`参数，其具体信息可以参见相关的配置文件（例如[gpt-2 config](https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-config.json) ）。
 
@@ -482,7 +482,7 @@ Today the weather is really nice and I am planning on anning on taking a nice...
 
 关于更多如何进行文本生成的策略，可以参见我们的这篇[博文](https://huggingface.co/blog/how-to-generate)。
 
-## <span id ='1006'>6 命名体识别</span>
+## 6 命名体识别
 
 命名体识别（Named Entity Recognition）指的就是对序列片段进行分类的任务。例如识别一个序列片段代表的是人名、组织名还是地名。一个常见的用于命名体识别的数据集就是CoNLL-2003。如果你想微调一个NER任务，那么你可通过PyTorch来运行[`run_ner.py`](https://github.com/huggingface/transformers/tree/master/examples/token-classification/run_ner.py)，或者是通过PyTorch-lightning来运行 [run_pl_ner.py](https://github.com/huggingface/transformers/tree/master/examples/token-classification/run_pl_ner.py) ，或者是使用Tensorflow来运行[run_tf_ner.py](https://github.com/huggingface/transformers/tree/master/examples/token-classification/run_tf_ner.py) 。
 
@@ -595,7 +595,7 @@ print([(token, label_list[prediction]) for token, prediction in zip(tokens, pred
 [('[CLS]', 'O'), ('Hu', 'I-ORG'), ('##gging', 'I-ORG'), ('Face', 'I-ORG'), ('Inc', 'I-ORG'), ('.', 'O'), ('is', 'O'), ('a', 'O'), ('company', 'O'), ('based', 'O'), ('in', 'O'), ('New', 'I-LOC'), ('York', 'I-LOC'), ('City', 'I-LOC'), ('.', 'O'), ('Its', 'O'), ('headquarters', 'O'), ('are', 'O'), ('in', 'O'), ('D', 'I-LOC'), ('##UM', 'I-LOC'), ('##BO', 'I-LOC'), (',', 'O'), ('therefore', 'O'), ('very', 'O'), ('##c', 'O'), ('##lose', 'O'), ('to', 'O'), ('the', 'O'), ('Manhattan', 'I-LOC'), ('Bridge', 'I-LOC'), ('.', 'O'), ('[SEP]', 'O')]
 ```
 
-## <span id ='1007'>7 摘要生成</span>
+## 7 摘要生成
 
 摘要生成（summarization）指的是输入一个稳当或者一篇文章，然后返回一段简短的总结。
 
@@ -676,7 +676,7 @@ print(generated)
 prosecutors say the marriages were part of an immigration scam. if convicted, barrientos faces two criminal counts of "offering a false instrument for filing in the first degree" she has been married 10 times, nine of them between 1999 and 2002.
 ```
 
-## <span id ='1008'>8 翻译</span>
+## 8 翻译
 
 翻译（translation）指的是将一种语言的文本翻译成另外一种语言的过程。一个常见的用于翻译的数据集便是WMT English to German，它将英语句子作为输入然后让模型翻译出对应的德语句子。如果你想要在翻译任务上微调某个模型，可以参见这个[文档](https://github.com/huggingface/transformers/blob/master/examples/seq2seq/README.md)。
 

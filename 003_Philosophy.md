@@ -27,7 +27,7 @@
   - 实现一种简单的方法来对transformer的多头进行遮蔽和修剪；
 - 在PyTorch和TensorFlow2.0中能够更大程度上的达到自由转换的目的，例如通过PyTorch来对模型进行训练，但是可以通过TensorFlow来进行预测。
 
-## <span id ='031'>主要概念</span>
+## 主要概念
 
 *Transformers*中的每一个网络模型都是在三类基本的类上实现的：
 

@@ -11,9 +11,9 @@
 
 *Transformers*（之前叫做*pytorch-transformers*和*pytorch-pretrained-ber*）提供了一些自然语言理解（NLU）和自然语言生成（NLG）中常见的网络模型，包括BERT、GPT-2、RoBERTa、XLM、DistilBert、XLNet等等。同时，*Transformers*也提供了在100多种语言中所训练得到的超过32个预训练模型，并且这些模型能够在TensorFlow2.0和Pytorch间做到无缝切换。
 
-点击此处*[Transformers](https://github.com/huggingface/transformers)*可以查看我们的代码仓库！
+点击此处[*Transformers*](https://github.com/huggingface/transformers)可以查看我们的代码仓库！
 
-# <span id ='001'>特性</span>
+# 特性
 
 - 高性能：使用*Transformers*能够轻松地在NLU和NLG任务上取得很好的效果；
 - 低门槛：使用*Transformers*能够轻松地实现各种NLU和NLG模型；
@@ -37,14 +37,14 @@
 - 随意在TensorFlow2.0和Pytorch切换网络架构；
 - 无缝的选择合适网络架构进行训练、评估和部署；
 
-# <span id ='002'>目录</span>
+# 目录
 
 整个*Transformers*说明文档可以大致分为如下五个部分：
 
-- **简单上手：**这部分包含了对于*Transformers*的一个快速指南，包括如何安装如何简单使用以及我们的一些理念；
-- **总体介绍：**这部分包含了对于*Transformers*的总体介绍和使用信息；
-- **进阶指导：**这部分包含了对于*Transformers*更为进阶的使用，包括指定自己的配置参数等；
-- **研究使用：**这部分主要包含了一些对应Transformers模型的通用研究介绍；
+- **简单上手：** 这部分包含了对于*Transformers*的一个快速指南，包括如何安装如何简单使用以及我们的一些理念；
+- **总体介绍：** 这部分包含了对于*Transformers*的总体介绍和使用信息；
+- **进阶指导：** 这部分包含了对于*Transformers*更为进阶的使用，包括指定自己的配置参数等；
+- **研究使用：** 这部分主要包含了一些对应Transformers模型的通用研究介绍；
 
 目前*Transformers*包含了基于Pytorch和Tensorflow两种框架的实现，以及对应的预训练模型、使用说明和两者间的转换说明等。对于*Transformers*已经实现的模型如下所示：
 

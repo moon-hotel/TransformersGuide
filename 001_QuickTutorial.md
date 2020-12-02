@@ -94,7 +94,7 @@ classifier = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
 
 如果你在model hub里不能够找到与你的数据类似的预训练模型（译者注：这里应该指的是没有在特定任务中经过微调后的模型，而不是指原始语料下训练得到的通用模型），那么你就需要在自己的数据集上进行微调训练。对此，我们专门提供了一些[示例脚本](https://huggingface.co/transformers/examples.html)来完成这些任务。一旦你在自己的数据上完成微调之后，千万不要忘了将其分享到model hub社区。详细分享上次步骤可参加[此处](https://huggingface.co/transformers/model_sharing.html)。
 
-## <span id = '012'>2 预训练模型的内幕</span>
+## 2 预训练模型的内幕
 
 现在，让我们来看看在使用`pipeline()`的过程中，其背后到底发生了什么事情。正如我们在上面所说到的，模型和分词器都是通过对应的`from_pretrained()`方法所建立的：
 
