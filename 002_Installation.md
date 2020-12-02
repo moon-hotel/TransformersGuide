@@ -70,7 +70,7 @@ python -c "from transformers import pipeline; print(pipeline('sentiment-analysis
 
 如果你希望通过我们的托管平台来使用一个非常大的预训练模型（例如通过CI来进行超大规模的产品部署），最好的方法就是将它缓存到你自己的终端上。同时，如果在这过程中遇到了任何问题，请直接联系我们。
 
-## <span id = '024'>4 在移动终端上使用*Transformers*</span>
+## <span id = '24'>4 在移动终端上使用*Transformers*</span>
 
 如果需要在移动设备上使用*Transformers*，那么你可以去[swift-coreml-transformers](https://github.com/huggingface/swift-coreml-transformers) 查看相关内容。
 

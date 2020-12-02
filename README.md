@@ -30,7 +30,7 @@
   - [通过`pip install`进行安装](002_Installation.md/#id021)
   - [通过源码进行安装](002_Installation.md/#id022)
   - [模型缓存路径](002_Installation.md/#id023)
-  - [在移动终端上使用*Transformers*](002_Installation.md/#id024)
+  - [在移动终端上使用*Transformers*](002_Installation.md/#id24)
 - [设计理念](003_Philosophy.md)
   - [主要概念](003_Philosophy.md/#id031)
 - [术语介绍](./004_Glossary.md)
